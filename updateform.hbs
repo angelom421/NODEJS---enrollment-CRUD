@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="RegistrationForm">
+        <form action="/auth/updateenrollees" method="POST">
+        <h3>{{title}}</h3> <br>
+            <div class="InputBox">
+                <label for="admissionid" style="font-weight: 700;">Admission ID:</label>
+                <input type="text" id="admission_id" name="admission_id" placeholder="Admission ID" value="{{user.admission_id}}" readonly>
+            </div> <br>
+            <div class="InputBox">
+                <label for="courseid" style="font-weight: 700;">Course ID</label>
+                <input type="text" id="course_id" name="course_id" placeholder="Course ID" value="{{user.course_id}}">
+            </div> <br>
+            <div class="InputBox">
+                <label for="fname" style="font-weight: 700;">First Name</label>
+                <input type="text" id="first_name" name="first_name" placeholder="First Name" value="{{user.first_name}}">
+            </div> <br>
+            <div class="InputBox">
+                <label for="mname" style="font-weight: 700;">Middle Name</label>
+                <input type="text" id="middle_name" name="middle_name" placeholder="Middle Name" value="{{user.middle_name}}">
+            </div> <br>
+            <div class="InputBox">
+                <label for="lname" style="font-weight: 700;">Last Name</label>
+                <input type="text" id="last_name" name="last_name" placeholder="Last Name" value="{{user.last_name}}">
+            </div> <br>
+            <div class="InputBox">
+                <label for="email" style="font-weight: 700;">Email</label>
+                <input type="text" id="email" name="email" placeholder="Email" value="{{user.email}}" readonly>
+            </div> <br>
+            <div class="InputBox">
+                <label for="gender" style="font-weight: 700;">Gender</label>
+                <input type="text" id="gender" name="gender" placeholder="Gender" value="{{user.gender}}" readonly>
+            </div>
+            <div class="InputBox">
+                <input type="submit" onclick="return confirm('Are the details all correct?')" value="Save">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

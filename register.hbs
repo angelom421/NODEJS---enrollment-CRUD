@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="RegistrationForm">
+        <form action="/auth/register" method="POST">
+            <h2>Admin Registration</h2>
+            <div class="InputBox">
+                <input type="text" id="firstname" name="firstname" placeholder="First Name">
+                <div class="errorHint hidden">First Name is required.</div>
+            </div>
+            <div class="InputBox">
+                <input type="text" id="lastname" name="lastname" placeholder="Last Name">
+                <div class="errorHint hidden">Last Name is required.</div>
+            </div>
+            <div class="InputBox">
+                <input type="text" id="email" name="email" placeholder="Email">
+                <div class="errorHint hidden">Valid Email is required.</div>
+            </div>
+            <div class="InputBox">
+                <input type="password" id="password" name="password" placeholder="Password">
+                <!-- <div class="errorHint hidden">Password length must be at least 8 characters.</div> -->
+            </div> 
+            <div class="InputBox">
+                <input type="password" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password">
+            </div> <br>
+            <div class="InputBox">
+                <input type="submit"  value="Register">
+            </div>
+        </form>
+    {{#if message }}
+    <h4 style="color:red; text-align:center">{{message}}</h4>
+    {{/if}}
+</body>
+</html>

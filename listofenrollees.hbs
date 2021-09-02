@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of Enrollees</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="RegistrationForm"></div>
+        <h4 style="text-align: right; margin-right: 450px; color: black;" ><a href="/">Logout</a></h4>
+        <h3 style="text-align: center;">{{title}}</h3> <br>
+        <h4 style="text-align: center; color: #359720"><a href="/auth/addform">Add New Enrollee</a></h4>
+        <table style="margin: auto;">
+            <tr>
+                <th style="padding: 1em;">Admission ID</th> 
+                <th style="padding: 1em;">Course ID</th>
+                <th style="padding: 1em;">First Name</th>
+                <th style="padding: 1em;">Middle Name</th>
+                <th style="padding: 1em;">Last Name</th>
+                <th style="padding: 1em;">Email</th>
+                <th style="padding: 1em;">Gender</th>
+                <th style="padding: 1em;">Action</th>
+            </tr>
+            {{#each user}}
+            <tr style="text-align: center;">
+                <td style="margin-right: 20px;">{{this.admission_id}}</td>
+                <td style="margin-right: 20px;">{{this.course_id}}</td>
+                <td style="margin-right: 20px;">{{this.first_name}}</td>
+                <td style="margin-right: 20px;">{{this.middle_name}}</td>
+                <td style="margin-right: 20px;">{{this.last_name}}</td>
+                <td style="margin-right: 20px;">{{this.email}}</td>
+                <td style="margin-right: 20px;">{{this.gender}}</td>
+                <td><a style="text-decoration: none; color: green;" href="/auth/updateform/{{this.email}}" onclick="return confirm('Are you sure you want to Edit?')">Edit </a>|<a style="text-decoration: none; color: red;" href="/auth/deleteuser/{{this.email}}" onclick="return confirm('Are you sure you want to delete enrollee?')"> Delete</a></td>
+            </tr>
+            {{/each}}
+        </table>
+    </div>
+</body>
+</html>
